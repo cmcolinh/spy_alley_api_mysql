@@ -38,6 +38,7 @@ GEM
       inflecto (~> 0.0.0, >= 0.0.2)
     ice_nine (0.11.2)
     inflecto (0.0.2)
+    mysql2 (0.5.3-x64-mingw32)
     rake (12.3.3)
     rom (4.2.1)
       rom-changeset (~> 1.0, >= 1.0.2)
@@ -93,6 +94,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
+  mysql2
   rake (~> 12.0)
   rom (~> 4.0)
   rom-sql (~> 2.0)
