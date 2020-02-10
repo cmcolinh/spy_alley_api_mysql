@@ -5,11 +5,11 @@ module SpyAlleyApiMysql
   module Relations
     class Actions < ROM::Relation[:sql]
       schema do
-        attribute :id
-        attribute :last_action_id
-        attribute :next_player_id
-        attribute :action
-        attribute :next_action_options
+        attribute :id, Dry::Types['strict.int']
+        attribute :last_action_id, Dry::Types['strict.int']
+        attribute :next_player_id, Dry::Types['strict.int']
+        attribute :action, Dry::Types['strict.string']
+        attribute :next_action_options, Dry::Types['strict.string']
 
         primary_key :id
 

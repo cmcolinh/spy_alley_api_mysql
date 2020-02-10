@@ -5,11 +5,11 @@ module SpyAlleyApiMysql
   module Relations
     class Decks < ROM::Relation[:sql]
       schema do
-        attribute :id
-        attribute :game_id
-        attribute :contents
-        attribute :start_action_id
-        attribute :end_action_id
+        attribute :id, Dry::Types['strict.int']
+        attribute :game_id, Dry::Types['strict.int']
+        attribute :contents, Dry::Types['strict.string']
+        attribute :start_action_id, Dry::Types['strict.int']
+        attribute :end_action_id, Dry::Types['strict.int']
 
         primary_key :id
 
