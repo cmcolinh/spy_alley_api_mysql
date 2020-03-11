@@ -20,10 +20,6 @@ module SpyAlleyApiMysql
         end
       end
 
-      def alias
-        as(:move_card_decks)
-      end
-
       def for_game_id(game_id)
         join(:decks, {game_id: :game_id}, table_alias: :free_gift_cards_deck)
           .select{`SUBSTRING(\`decks\`.\`contents\`, 1, 1) AS \`top_move_card\`,

@@ -1,6 +1,7 @@
 module SpyAlleyApiMysql
   module Models
     class Deck
+      extend Dry::Initializer
       @@equipment = {
         'A' => 'french password',
         'B' => 'french disguise',
@@ -29,11 +30,8 @@ module SpyAlleyApiMysql
         'Y' => 'russian key'
       }.freeze
 
-      attr_reader :top_move_card, :top_free_gift_card
-      def initialize(options={})
-        @top_move_card = options[:top_move_card].to_i
-        @top_free_gift_card = @@equipment[options[:top_free_gift_card]]
-      end
+      option :top_move_card, type: proc(&:to_i)
+      option :top_free_gift_card, type: ->(card){@@equipment[card]}
     end
   end
 end
