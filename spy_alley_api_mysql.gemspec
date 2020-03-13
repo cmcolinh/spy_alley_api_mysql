@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["colin.a.horner@gmail.com"]
 
   spec.summary       = "MySQL support plugin for Spy Alley"
-  spec.description   = "Handle Mysql Data and converts to application consumabele data for Spy Alley"
+  spec.description   = "Handle Mysql Data and converts to application consumable data for Spy Alley"
   #spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
   #spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
@@ -28,6 +28,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
