@@ -3,19 +3,19 @@ require 'rom-sql'
 
 module SpyAlleyApiMysql
   module Relations
-    class Decks < ROM::Relation[:sql]
-      schema(:decks) do
+    class PlayerEquipmentMaps < ROM::Relation[:sql]
+      schema(:player_equipment_maps) do
         attribute :id, Dry::Types['strict.int']
-        attribute :game_id, Dry::Types['strict.int']
-        attribute :deck_type_id, Dry::Types['strict.int']
-        attribute :contents, Dry::Types['strict.string']
+        attribute :player_id, Dry::Types['strict.int']
+        attribute :equipment_id, Dry::Types['strict.int']
         attribute :start_action_id, Dry::Types['strict.int']
         attribute :end_action_id, Dry::Types['strict.int']
 
         primary_key :id
 
         associations do
-          has_many :decks
+          belongs_to :player
+          many_to_one :equipment
         end
       end
     end
