@@ -13,10 +13,9 @@ module SpyAlleyApiMysql
 
         primary_key :id
 
-        #associations do
-        #  has_many :deck_starts, combine_key: :start_action_id
-        #  has_many :deck_ends, combine_key: :end_action_id
-        #end
+        associations do
+          belongs_to :player
+        end
       end
     end
   end

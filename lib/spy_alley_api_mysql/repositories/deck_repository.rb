@@ -13,7 +13,6 @@ module SpyAlleyApiMysql
             \`decks\`.\`deck_type_id\` = 1 AND
             \`decks\`.\`end_action_id\` = 0`}
           .map_to(SpyAlleyApiMysql::Models::Deck)
-          .first
       end
     end
   end
