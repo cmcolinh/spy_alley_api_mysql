@@ -90,6 +90,23 @@ module SpyAlleyApiMysql
       end
 
       def create_decks(game_id, action_id)
+        move_card_deck_contents = '111111222222333333444444555555666666'.chars.shuffle.join('')
+        free_gift_deck_contents = 'AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWWWXXYY'.chars.shuffle.join('')
+        decks_tuples = [
+          {
+            game_id: game_id,
+            deck_type_id: 1, # move_card
+            contents: move_card_deck_contents,
+            start_action_id: action_id
+          },
+          {
+            game_id: game_id,
+            deck_type_id: 2, # free_gift
+            contents: free_gift_deck_contents,
+            start_action_id: action_id
+          }
+        ]
+        decks_tuples.each{|deck| decks.commit_deck(deck)}
       end
     end
 
