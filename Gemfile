@@ -4,8 +4,9 @@ source "https://rubygems.org"
 gemspec
 
 gem 'dry-auto_inject'
+gem 'dry-validation', '~> 1.5'
 gem 'mysql2'
 gem 'rake', '~> 13.0'
-gem 'rom', '~> 4.0'
-gem 'rom-sql', '~> 2.0'
+gem 'rom', '~> 5.2'
+gem 'rom-sql', '~> 3.2'
 gem 'rspec', '~> 3.0'
