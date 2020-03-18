@@ -1,13 +1,14 @@
 require 'rom'
 require 'rom-sql'
+require 'dry-types'
 
 module SpyAlleyApiMysql
   module Relations
     class Actions < ROM::Relation[:sql]
       schema(:actions) do
-        attribute :id, Dry::Types['strict.int']
-        attribute :last_action_id, Dry::Types['strict.int']
-        attribute :next_player_id, Dry::Types['strict.int']
+        attribute :id, Dry::Types['strict.integer']
+        attribute :last_action_id, Dry::Types['strict.integer']
+        attribute :next_player_id, Dry::Types['strict.integer']
         attribute :action, Dry::Types['strict.string']
         attribute :next_action_options, Dry::Types['strict.string']
 

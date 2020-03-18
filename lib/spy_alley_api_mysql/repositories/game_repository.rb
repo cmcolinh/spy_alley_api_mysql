@@ -1,5 +1,4 @@
 require 'json'
-require 'spy_alley_api_mysql/models/new_player'
 
 module SpyAlleyApiMysql
   module Repositories
@@ -26,8 +25,8 @@ module SpyAlleyApiMysql
         create_players = players.command(:create)
         create_players.(player_tuples)
         games.join(:players)
-          .select{`\`players\`.\`id\`}
-          .where(Sequel::lit("`games`.`id` = #{game_id}"))
+          .select{`\`players\`.\`id\``}
+          .where{Sequel::lit("`games`.`id` = #{game_id}")}
           .map_to(NewPlayer)
           .to_a
       end
@@ -37,7 +36,7 @@ module SpyAlleyApiMysql
         action_tuple = {
           last_action_id: 0,
           next_player_id: starting_player.id,
-          action: '{"start_game": true}'
+          action: '{"start_game": true}',
           next_action_options: JSON::generate(
             accept_roll: true,
             accept_make_accusation: {
@@ -54,7 +53,7 @@ module SpyAlleyApiMysql
         spy_identity_tuples = new_players.map.with_index do |player, index|
           {
             player_id: new_player.id,
-            nationality_id: spy_identities_to_use[index]
+            nationality_id: spy_identities_to_use[index],
             start_action_id: action_id,
             end_action_id: 0
           }

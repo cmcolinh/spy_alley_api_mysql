@@ -2,9 +2,9 @@ module SpyAlleyApiMysql
   module Relations
     class Equipment < ROM::Relation[:sql]
       schema(:equipment) do
-        attribute :id, Dry::Types['strict.int']
-        attribute :nationality_id, Dry::Types['strict.int']
-        attribute :type_id, Dry::Types['strict.int']
+        attribute :id, Dry::Types['strict.integer']
+        attribute :nationality_id, Dry::Types['strict.integer']
+        attribute :type_id, Dry::Types['strict.integer']
 
         primary_key :id
 

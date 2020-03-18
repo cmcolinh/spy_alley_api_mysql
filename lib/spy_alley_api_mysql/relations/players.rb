@@ -5,11 +5,11 @@ module SpyAlleyApiMysql
   module Relations
     class Players < ROM::Relation[:sql]
       schema(:players) do
-        attribute :id, Dry::Types['strict.int']
-        attribute :game_id, Dry::Types['strict.int']
-        attribute :user_id, Dry::Types['strict.int']
-        attribute :seat_id, Dry::Types['strict.int']
-        attribute :token_id, Dry::Types['strict.int']
+        attribute :id, Dry::Types['strict.integer']
+        attribute :game_id, Dry::Types['strict.integer']
+        attribute :user_id, Dry::Types['strict.integer']
+        attribute :seat_id, Dry::Types['strict.integer']
+        attribute :token_id, Dry::Types['strict.integer']
 
         primary_key :id
 
