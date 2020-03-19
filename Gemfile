@@ -4,6 +4,7 @@ source "https://rubygems.org"
 gemspec
 
 gem 'dry-auto_inject'
+gem 'dry-monads'
 gem 'dry-validation', '~> 1.5'
 gem 'mysql2'
 gem 'rake', '~> 13.0'

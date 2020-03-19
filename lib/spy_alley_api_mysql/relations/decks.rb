@@ -20,12 +20,13 @@ module SpyAlleyApiMysql
       end
 
       def commit_deck(game_id:, deck_type_id:, contents:, start_action_id:, end_action_id: 0)
-        select{Sequel::lit("commitDeck(" +
-            "/*game_id:*/ #{game_id}, " +
-            "/*deck_type_id:*/ #{deck_type_id}, " +
-            "/*contents:*/ #{contents}, " +
-            "/*start_action_id:*/ #{start_action_id}, " +
-            "/*end_action_id:*/ #{end_action_id})")}
+         select{integer::commitDeck(
+           game_id,
+           deck_type_id,
+           contents,
+           start_action_id,
+           end_action_id
+         ).as(:deck)}
       end
     end
   end
