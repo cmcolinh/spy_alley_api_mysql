@@ -14,6 +14,7 @@ module SpyAlleyApiMysql
         attribute :move_5_cards, Dry::Types['strict.integer']
         attribute :move_6_cards, Dry::Types['strict.integer']
         attribute :money, Dry::Types['strict.integer']
+        attribute :wild_cards, Dry::Types['strict.integer']
         attribute :start_action_id, Dry::Types['strict.integer']
         attribute :end_action_id, Dry::Types['strict.integer']
 

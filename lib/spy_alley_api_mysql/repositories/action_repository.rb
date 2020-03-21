@@ -5,9 +5,9 @@ module SpyAlleyApiMysql
     class ActionRepository < ROM::Repository[:actions]
       def action_info_for_action(id:)
         actions.join(:players, id: :next_player_id)
-          .select{`\`players\`.\`game_id\`,
-            \`actions\`.\`next_player_id\` AS \`next_player\`,
-            \`actions\`.\`next_action_options\``}
+          .select(players[:game_id],
+            actions[:next_player_id].as(:next_player),
+            actions[:next_action_options])
           .where(Sequel::lit("`actions`.`id` = #{id.to_i}"))
           .map_to(SpyAlleyApiMysql::Models::Action)
       end
