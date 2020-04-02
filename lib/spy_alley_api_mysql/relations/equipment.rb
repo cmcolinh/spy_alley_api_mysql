@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SpyAlleyApiMysql
   module Relations
     class Equipment < ROM::Relation[:sql]

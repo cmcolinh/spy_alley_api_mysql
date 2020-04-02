@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spy_alley_api_mysql/dependencies'
 require 'dry/auto_inject'
 

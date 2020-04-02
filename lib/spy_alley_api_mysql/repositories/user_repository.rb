@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spy_alley_api_mysql/models/user'
 
 module SpyAlleyApiMysql

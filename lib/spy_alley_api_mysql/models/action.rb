@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 
 module SpyAlleyApiMysql
@@ -21,6 +23,7 @@ module SpyAlleyApiMysql
       }
       
       option :game_id
+      option :action_id
       option :next_player
       option :next_action_options, type: ->(json) do
         JSON::parse(json, symbolize_names: true).tap do |h|
@@ -33,7 +36,7 @@ module SpyAlleyApiMysql
       end
 
       def to_h
-        {next_player: next_player, next_action_options: next_action_options}
+        {next_player: next_player, action_id: action_id, next_action_options: next_action_options}
       end
     end
   end

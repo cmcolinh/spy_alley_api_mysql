@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rom-sql'
 require 'spy_alley_api_mysql/relations/actions'
 require 'spy_alley_api_mysql/relations/decks'

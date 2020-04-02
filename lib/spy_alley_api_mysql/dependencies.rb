@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'dry/container'
 require 'spy_alley_api_mysql/setup'
 require 'spy_alley_api_mysql/repositories/action_repository'
